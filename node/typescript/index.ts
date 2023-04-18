@@ -12,7 +12,7 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
     if (req.method == "GET") {
         if (reqUrl == "/small") {
             const small = require('../../data/small.json')
-            res.write(JSON.stringify(small))
+            res.write('JSON.stringify(small)')
             res.end()
         }
         if (reqUrl == "/medium") {

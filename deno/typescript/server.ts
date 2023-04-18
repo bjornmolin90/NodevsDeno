@@ -7,7 +7,7 @@ const handler = async (req: Request): Promise<Response> => {
   const url = new URL(req.url);
 
   if (url.pathname  === "/small") {
-    return new Response(JSON.stringify(small), {
+    return new Response(JSON.stringify(medium), {
       status: 200,
       headers: {
         "content-type": "application/json",
