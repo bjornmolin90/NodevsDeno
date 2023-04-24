@@ -1,5 +1,5 @@
+const express = require('express')
 import { Express, Request, Response } from 'express';
-import * as express from 'express';
 
 const app: Express = express();
 const port = 3000;
