@@ -4,6 +4,10 @@ import { Express, Request, Response } from 'express';
 const app: Express = express();
 const port = 3000;
 
+app.get('/', (req: Request, res: Response) => {
+    res.send('Hello World');
+});
+
 app.get('/small', (req: Request, res: Response) => {
     const small = require('../../data/small')
     res.send(JSON.stringify(small));

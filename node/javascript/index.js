@@ -28,11 +28,6 @@ const server = http.createServer((req, res) => {
             res.write(JSON.stringify(big))
             res.end()
         }
-    } else if (req.method == "POST") {
-        if (reqUrl == "/hello") {
-            res.write("hello world")
-            res.end()
-        }
     }
 })
 

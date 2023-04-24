@@ -10,9 +10,13 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
     const reqUrl = parse(req.url).pathname
     // Compare our request method
     if (req.method == "GET") {
+        if (reqUrl == "/") {
+            res.write('Hello World')
+            res.end()
+        }
         if (reqUrl == "/small") {
             const small = require('../../data/small.json')
-            res.write('JSON.stringify(small)')
+            res.write(JSON.stringify(small))
             res.end()
         }
         if (reqUrl == "/medium") {
@@ -25,12 +29,7 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
             res.write(JSON.stringify(big))
             res.end()
         }
-    } else if (req.method == "POST") {
-        if (reqUrl == "/hello") {
-            res.write("hello world")
-            res.end()
-        }
-    }
+    } 
 })
 
 server.listen(host, () => {

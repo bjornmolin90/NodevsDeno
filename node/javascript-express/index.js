@@ -2,10 +2,14 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.get('/', (req, res) => {
+    res.send('Hello World')
+})
 app.get('/small', (req, res) => {
     const data = require('../../data/small.json')
     res.json(data)
 })
+
 app.get('/medium', (req, res) => {
     const data = require('../../data/medium.json')
     res.json(data)
