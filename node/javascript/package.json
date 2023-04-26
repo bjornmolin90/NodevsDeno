@@ -9,6 +9,7 @@
   "author": "Björn Molin",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "nodemon": "^2.0.22"
   }
 }
