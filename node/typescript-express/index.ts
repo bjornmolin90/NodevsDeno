@@ -33,6 +33,4 @@ app.get('/big', (req: Request, res: Response) => {
     res.send(JSON.stringify(big));
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+app.listen(port);
