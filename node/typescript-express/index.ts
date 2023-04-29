@@ -1,6 +1,6 @@
 const express = require('express')
 import { Express, Request, Response } from 'express';
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 16;
 const pass = 'Passw0rd123!';
 

@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 16;
 const pass = 'Passw0rd123!';
 

@@ -1,6 +1,6 @@
 const http = require("http");
 const url = require("url");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 16;
 const pass = 'Passw0rd123!';
 
