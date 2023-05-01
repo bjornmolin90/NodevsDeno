@@ -4,7 +4,6 @@ import small from "../../data/small.json" assert { type: 'json' };
 import medium from "../../data/medium.json" assert { type: 'json' };
 import big from "../../data/big.json" assert { type: 'json' };
 
-const salt = await bcrypt.genSalt(16);
 const pass = "Passw0rd123!"
 
 const handler = async (req: Request): Promise<Response> => {
@@ -20,6 +19,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
   
   else if (url.pathname  === "/pass") {
+    const salt = await bcrypt.genSalt(16);
     const hash = await bcrypt.hash(pass, salt);
     return new Response(JSON.stringify(hash), {
       status: 200,

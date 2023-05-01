@@ -4,7 +4,6 @@ import small from "../../data/small.json" assert { type: 'json' };
 import medium from "../../data/medium.json" assert { type: 'json' };
 import big from "../../data/big.json" assert { type: 'json' };
 
-const salt = await bcrypt.genSalt(16);
 const pass = "Passw0rd123!"
 
 const router = new Router();
@@ -13,6 +12,7 @@ router
     context.response.body = "Hello world!";
   })
   .get("/pass", async (context) => {
+    const salt = await bcrypt.genSalt(16);
     const hash = await bcrypt.hash(pass, salt);
     context.response.body = JSON.stringify(hash);
   })
