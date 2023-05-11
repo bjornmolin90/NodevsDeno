@@ -10,50 +10,25 @@ const handler = async (req: Request): Promise<Response> => {
   const url = new URL(req.url);
 
   if (url.pathname  === "/small") {
-    return new Response(JSON.stringify(small), {
-      status: 200,
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    return new Response(JSON.stringify(small));
   }
   
   else if (url.pathname  === "/pass") {
     const salt = await bcrypt.genSalt(16);
     const hash = await bcrypt.hash(pass, salt);
-    return new Response(JSON.stringify(hash), {
-      status: 200,
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    return new Response(JSON.stringify(hash));
   }
 
   else if (url.pathname  === "/medium") {
-    return new Response(JSON.stringify(medium), {
-      status: 200,
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    return new Response(JSON.stringify(medium));
   }
 
   else if (url.pathname  === "/big") {
-    return new Response(JSON.stringify(big), {
-      status: 200,
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    return new Response(JSON.stringify(big));
   }
 
   else {
-    return new Response("Hello world", {
-      status: 200,
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    return new Response("Hello world");
   }
 
 };

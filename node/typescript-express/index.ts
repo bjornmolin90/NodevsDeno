@@ -1,11 +1,10 @@
 const express = require('express')
 import { Express, Request, Response } from 'express';
 const bcrypt = require('bcryptjs');
-const saltRounds = 16;
-const pass = 'Passw0rd123!';
-
 const app: Express = express();
 const port = 3000;
+const saltRounds = 16;
+const pass = 'Passw0rd123!';
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World');
